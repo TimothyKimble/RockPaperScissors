@@ -21,7 +21,7 @@ function drawCards() {
   for (let key in choices) {
     let choice = choices[key]
     template += `    <div class="card m-2 box-shadow-dark" style="width: 18rem;">
-    <button onclick="pick('${key}')">
+    <button onclick="pick('${key}')" "computerChoice('${key}')">
       <img class="card-img-top w-100" src="${choice.img}" alt="${choice.says}">
       <div class="card-body">
         <h5 class="card-title d-flex justify-content-center">${choice.says}</h5>
@@ -38,15 +38,21 @@ function pick(weapon) {
   console.log(choice)
 
 
-  document.getElementById('weapon-choice').innerText = `You Chose ${choice}`
+  document.getElementById('weapon-choice').innerText = `You Chose ${choice.says}`
   document.getElementById('weapon-img').innerHTML = `        <div class="card m-2 box-shadow-dark " style="width: 25rem; height: 25rem;">
  
-    <img class="card-img-top w-100" src="${choice}" alt="${choice}">
+    <img class="card-img-top w-100" src="${choice.img}" alt="${choice.says}">
     <div class="card-body">
-      <h5 class="card-title d-flex justify-content-center">${choice}</h5>
+      <h5 class="card-title d-flex justify-content-center">${choice.says}</h5>
     </div>
 
 </div>`
 }
 
 drawCards()
+
+function computerChoice() {
+  let choice = Object.keys(choices)
+  let randindex = Math.floor(Math.random() * (choice.length))
+  pick(choice[randindex])
+}
