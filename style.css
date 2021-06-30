@@ -1,0 +1,31 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+
+.logotxt {
+  font-family: 'Press Start 2P', cursive;
+
+}
+.headerbkg {
+  min-height: 8vh;
+  background-color: rgb(32 25 25);
+  background-size: auto;
+}
+
+.logotxt {
+  font-family: 'Press Start 2P', cursive;
+
+}
+.box-shadow-dark{
+  box-shadow: 5px 5px 5px #393535;
+
+}
+button {
+  background: none;
+  border: none;
+}
